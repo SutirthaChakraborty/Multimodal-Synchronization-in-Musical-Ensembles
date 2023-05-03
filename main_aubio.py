@@ -1,25 +1,21 @@
-# import librosa
-import cv2
-import time
-import pandas as pd
-import imutils
-import numpy as np
-import matplotlib.pyplot as plt
-
-# from ffpyplayer.player import MediaPlayer
-from scipy.signal import savgol_filter
-from scipy.signal import find_peaks
-from moviepy.editor import *
-import aubio
-import pyaudio
-import wave
 import sys
+import time
+import wave
 
-
-import poseModule
-import PersonDetect
-
+import aubio
+import cv2
+import imutils
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import pyaudio
 import soundcard as sc
+from moviepy.editor import *
+# from ffpyplayer.player import MediaPlayer
+from scipy.signal import find_peaks, savgol_filter
+
+import PersonDetect
+import poseModule
 
 # import winsound
 duration = 100  # milliseconds
@@ -29,6 +25,7 @@ hop_s = win_s // 2
 
 
 import subprocess
+
 
 def mac_beep(freq, duration):
     script = f'''
