@@ -4,7 +4,7 @@
 
 Multimodal interaction, being a dynamic process, can be modeled as a set of coupled oscillators in certain situations with repetitive aspects, such as musical interfaces. Synchronization, a key metric of interactivity, refers to events occurring with reference to each other. This study investigates two mathematical models—Kuramoto and Swarmalator—used for musical phase synchronization amongst an ensemble. Each musician is represented as an individual oscillator communicating within a closely connected graph network.
 
-![Network Musicians](image/Fig1.png)
+![Network Musicians](image/Fig1.jpg)
 
 The research assesses the dynamic response of these models to tempo changes, initially derived from audio feedback alone but then subsequently incorporating extra information via visual cues, such as body sway. The URMP dataset, featuring multimodal music performance data, is employed for the experiments.
 
