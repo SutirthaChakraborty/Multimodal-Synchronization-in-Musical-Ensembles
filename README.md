@@ -21,17 +21,5 @@ The research assesses the dynamic response of these models to tempo changes, ini
 Additionally, we observed that larger ensembles provided more visual sway information, leading to a higher mean accuracy in Kuramoto's results for the audio-visual model. These findings underscore the significance of considering both auditory and visual cues when studying musical phase synchronization in ensembles and suggest that Kuramoto's model presents a promising avenue for modeling synchronous behavior in more sophisticated group musical performances.
 ![Network Musicians](image/Fig7.png)
 
-
-We evaluated two different algorithms  for understanding which algorithm can be used for synchronizating Robots with multiple human during an orchestra. 
-The algorithms are 
-1. Kuramoto Oscillators
-2. Swarm Optimization
-
-The main idea was to consider humans as individual independent oscillators. And our Robotic System as another virtual musician trying the synchronize with other Oscillators. 
-
-
-CODES: 
---------
-
-i> *codes/AlgorithmTest.py* - Contain the algorithms
+[Click here for more code details](Code_explaination.md)
 
