@@ -1,33 +1,3 @@
-# Explanation of main_librosa.py
-
-This Python script demonstrates the process of detecting beats from a video file, estimating the positions of people in the video, and simulating the behavior of a swarmalator system or Kuramoto model.
-
-The script can be divided into the following sections:
-
-1. **Import necessary libraries**: Import required libraries such as NumPy, SciPy, Matplotlib, Librosa, OpenCV, and others.
-
-2. **Define helper function getBPM()**: This function calculates the beats per minute (BPM) given an array of beat times, the current time, and the previous BPM.
-
-3. **Step 1 - Beat detection**: Load the video file and extract audio using Librosa. Calculate the tempo (BPM) and beat times using Librosa's beat tracking functionality.
-
-4. **Step 2 - Person detection**: Create an instance of the `PersonDetectFromVideo` class from the `PersonDetect` module, providing the video file name, number of frames to process, and the human width as input parameters. Estimate the number of people and their positions using the `personPosition()` method.
-
-5. **Step 3 - Optical flow pose**: Use the `poseDetections()` method to detect the poses of the people in the video. Calculate the optical flow pose of each person with the `opticalFlowPose()` method.
-
-6. **Calculate initial velocity**: Compute the initial velocity `vn` based on the average difference in positions.
-
-7. **Find peaks in the signal**: Detect the peaks in the position signal for each person using the `find_peaks()` function from SciPy. Calculate the phase peak times and angular velocities for each person.
-
-8. **Initialize the swarmalator or Kuramoto model**: Create an instance of the `AlgorithmSimulate` class from the `AlgorithmTest` module, providing the time step `delta`, natural frequency `wn`, and the number of people as input parameters.
-
-9. **Iterate through the video frames**: For each frame of the video, update the state of the swarmalator system or Kuramoto model using the `swarmalator()` or `kuramoto()` methods of the `AlgorithmSimulate` instance. Update the positions and phases of each person in the video based on the calculated values.
-
-10. **Visualize the results**: Plot the positions and phases of each person in the video, as well as the predicted beats per minute and the ground truth beats per minute. Calculate the mean square error (MSE) between the predicted BPM and the ground truth BPM, and display it on the plot.
-
-The script demonstrates how to combine beat detection, person detection, and swarmalator/Kuramoto model simulations to analyze and visualize the behavior of people in a video based on their positions and the beats of the audio track.
-
-
-
 
 
 # Explanation of PersonDetect.py
@@ -119,34 +89,33 @@ This Python script defines two classes, `AlgorithmSimulate` and `swarmalator`, t
 The `AlgorithmSimulate` class can be used to simulate the behavior of a swarmalator system or Kuramoto model by creating an instance of the class and calling the `swarmalator()` or `kuramoto()` methods with the appropriate input parameters.
 
 
-# Explanation of main_aubio.py
+# Explanation of main files
 
-This script processes a given video file to detect human movements and generate synchronized beeps or send commands to Sonic Pi.
+This Python script demonstrates the process of detecting beats from a video file, estimating the positions of people in the video, and simulating the behavior of a swarmalator system or Kuramoto model.
 
-## Code Explanation
+The script can be divided into the following sections:
 
-1. Import necessary libraries, such as `numpy`, `pandas`, `cv2`, `aubio`, and custom modules like `PersonDetect` and `poseModule`.
-2. Define global variables and functions, such as `mac_beep()`, `shift5()`, and `opticalFlow()`.
-3. Define synchronization algorithms, such as `kuramoto()`, `janus()`, and `swarmalator()`.
-4. Define the main function, `CallRobot()`, which takes several arguments and returns the output based on the input arguments.
-5. In the `__main__` section of the script:
-   - Read the input video file and extract the audio.
-   - Initialize the `PersonDetect` object and detect the number of persons in the video.
-   - Initialize the `PoseDetector` object for each person.
-   - Use the `aubio` library to detect beats in the audio.
-   - Process the video frames and detect human pose for each person.
-   - Calculate the optical flow using the `opticalFlow()` function.
-   - Find peaks in the motion signal and synchronize the output according to the chosen algorithm (e.g., Kuramoto, Janus, or Swarmalator).
-   - Generate beeps or send commands to Sonic Pi based on the synchronized output.
+1. **Import necessary libraries**: Import required libraries such as NumPy, SciPy, Matplotlib, Librosa, OpenCV, and others.
 
-## Usage
+2. **Define helper function getBPM()**: This function calculates the beats per minute (BPM) given an array of beat times, the current time, and the previous BPM.
 
-To use this script, call the `CallRobot()` function with the appropriate input arguments, such as:
+3. **Step 1 - Beat detection**: Load the video file and extract audio using Librosa. Calculate the tempo (BPM) and beat times using Librosa's beat tracking functionality.
 
-- `filename`: The video file name or 'live' for camera input.
-- `function`: The synchronization algorithm to use ('Kuramoto', 'swarmlator', 'janus', or 'flock').
-- `videoFlag`: A flag to indicate if video synchronization is needed.
-- `output`: The output method ('sonicpi/tap' for Sonic Pi or tap sound).
-- `ip`: The IP address for Sonic Pi (optional).
-- `port`: The port number for Sonic Pi (optional).
-- `writeoutput`: A flag to indicate if the output timestamps should be written to a file (optional).
+4. **Step 2 - Person detection**: Create an instance of the `PersonDetectFromVideo` class from the `PersonDetect` module, providing the video file name, number of frames to process, and the human width as input parameters. Estimate the number of people and their positions using the `personPosition()` method.
+
+5. **Step 3 - Optical flow pose**: Use the `poseDetections()` method to detect the poses of the people in the video. Calculate the optical flow pose of each person with the `opticalFlowPose()` method.
+
+6. **Calculate initial velocity**: Compute the initial velocity `vn` based on the average difference in positions.
+
+7. **Find peaks in the signal**: Detect the peaks in the position signal for each person using the `find_peaks()` function from SciPy. Calculate the phase peak times and angular velocities for each person.
+
+8. **Initialize the swarmalator or Kuramoto model**: Create an instance of the `AlgorithmSimulate` class from the `AlgorithmTest` module, providing the time step `delta`, natural frequency `wn`, and the number of people as input parameters.
+
+9. **Iterate through the video frames**: For each frame of the video, update the state of the swarmalator system or Kuramoto model using the `swarmalator()` or `kuramoto()` methods of the `AlgorithmSimulate` instance. Update the positions and phases of each person in the video based on the calculated values.
+
+10. **Visualize the results**: Plot the positions and phases of each person in the video, as well as the predicted beats per minute and the ground truth beats per minute. Calculate the mean square error (MSE) between the predicted BPM and the ground truth BPM, and display it on the plot.
+
+The script demonstrates how to combine beat detection, person detection, and swarmalator/Kuramoto model simulations to analyze and visualize the behavior of people in a video based on their positions and the beats of the audio track.
+
+
+

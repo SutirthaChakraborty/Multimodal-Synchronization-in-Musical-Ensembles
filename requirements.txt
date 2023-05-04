@@ -1,0 +1,11 @@
+mediapipe==0.8
+librosa
+opencv-python
+matplotlib
+scipy
+pyaudio
+moviepy
+aubio
+pandas
+soundcard
+imutils
