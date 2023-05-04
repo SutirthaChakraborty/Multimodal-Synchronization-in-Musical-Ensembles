@@ -1,8 +1,7 @@
 
 # Multimodal Synchronization in Musical Ensembles : Investigating Audio and Visual Cues
-
-`![Python logo](https://www.python.org/static/img/python-logo.png =50x50)`
-
+ 
+<img src = 'https://www.python.org/static/img/python-logo.png' width="50%" height="50%">
 ---
 
 [Click here for more code details](Code_explaination.md)
