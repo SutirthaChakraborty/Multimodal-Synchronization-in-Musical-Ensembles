@@ -5,7 +5,7 @@ import pandas as pd
 import time
 import matplotlib.pyplot as plt
 
-import PoseModule
+import poseModule
 
 """
 Class Name  :   PersonDetectFromVideo

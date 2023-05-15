@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     #####################STEP 1=BEAT DETECTION #####################
     # create new audio file from a video file
-    videoFileName = 'data/Vid_18_Nocturne_vn_fl_tpt 5.mp4'
+    videoFileName = 'AudioVideo/data/Vid_18_Nocturne_vn_fl_tpt 5.mp4'
     # Replace This with our algorithm phases
     y, sr = librosa.load(videoFileName)
 
